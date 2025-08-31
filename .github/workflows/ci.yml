@@ -1,0 +1,17 @@
+name: CI (services pilot)
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check scaffold exists
+        run: |
+          test -d src
+          test -d tests
+          test -f README.md
+          test -f docs/OVERVIEW.md
+          test -f ops/RUNBOOK.md
