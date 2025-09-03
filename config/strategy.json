@@ -1,0 +1,7 @@
+{
+  "mode": "mSOL",
+  "skimPeriodDays": 2.5,
+  "preferInstantUnstake": true,
+  "minProfitLamports": 10000,
+  "maxUnstakeFeeBps": 50
+}
