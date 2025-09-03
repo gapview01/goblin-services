@@ -1,0 +1,20 @@
+name: ci
+
+on:
+  push:
+    branches: [poc/staking-orchestrator-v1]
+  pull_request:
+    branches: [poc/staking-orchestrator-v1]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
